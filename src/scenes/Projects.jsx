@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.2 },
+    transition: {
+      staggerChildren: 0.2,
+    },
   },
 };
 
@@ -41,7 +43,7 @@ const Projects = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
+        transition={{ duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, y: -50 },
           visible: { opacity: 1, y: 0 },
@@ -52,10 +54,10 @@ const Projects = () => {
             <span className="text-red">PRO</span>JECTS
           </p>
           <div className="flex justify-center mt-5">
-            <LineGradient width="w-1/3" />
+            <LineGradient width="w-2/3" />
           </div>
         </div>
-        <p className="my-10 mb-10">
+        <p className="mt-10 mb-10">
           Aliquam, amet dui feugiat facilisi dui. Aliquam aliquet integer ut
           fames odio in at. At magna ornare dictum lectus. Purus massa morbi
           purus nec eget eleifend ut elit.
@@ -63,18 +65,18 @@ const Projects = () => {
       </motion.div>
 
       {/* PROJECTS */}
-      <div className="flex justify-centerr">
+      <div className="flex justify-center">
         <motion.div
           className="sm:grid sm:grid-cols-3"
+          variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          variants={container}
+          viewport={{ once: true, amount: 0.2 }}
         >
           {/* ROW 1 */}
           <div
             className="flex justify-center text-center items-center p-10 bg-red
-             max-w-[400px] max-g-[400px] text-2xl font-playfair font-semibold"
+              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
             BEAUTIFUL USER INTERFACES
           </div>
@@ -95,7 +97,6 @@ const Projects = () => {
           >
             SMOOTH USER EXPERIENCE
           </div>
-
         </motion.div>
       </div>
     </section>
